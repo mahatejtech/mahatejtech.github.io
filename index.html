@@ -13,8 +13,8 @@
       --brand-blue: #2563eb;         /* flame blue */
       --brand-white: #ffffff;
       --brand-bg: #f5f5f5;
-      --text-main: #111827;          /* text only */
-      --text-muted: #475569;
+      --text-main: #111827;          /* black-ish text everywhere */
+      --text-muted: #4b5563;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,13 +28,20 @@
 
     a { color: inherit; }
 
-    /* TOP NAV BAR */
+    /* TOP WRAPPER + GRADIENT */
 
     .site-header-wrapper {
-      background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+      background: linear-gradient(
+        120deg,
+        var(--brand-orange) 0%,
+        #fb923c 30%,
+        var(--brand-blue) 90%
+      );
       color: var(--brand-white);
       padding-bottom: 3rem;
     }
+
+    /* NAV BAR */
 
     .nav-bar {
       max-width: 1080px;
@@ -49,27 +56,30 @@
     .brand-block {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.9rem;
     }
 
     .logo {
-      width: 360px;       /* bigger logo */
+      width: 180px;       /* bigger logo */
       height: auto;
-      border-radius: 16px;
-      background-color: var(--brand-white);
-      padding: 8px;
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+      /* remove white background + card */
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
     }
 
     .brand-text h1 {
-      font-size: 1.35rem;
-      letter-spacing: 0.06em;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--brand-white);  /* brand name on gradient */
     }
 
     .brand-text p {
       font-size: 0.8rem;
-      opacity: 0.9;
+      opacity: 0.95;
+      color: var(--brand-white);
     }
 
     .nav-links {
@@ -81,6 +91,7 @@
     .nav-links a {
       text-decoration: none;
       opacity: 0.9;
+      color: var(--brand-white);
     }
 
     .nav-links a:hover {
@@ -100,20 +111,21 @@
     header.hero {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0.5rem 1.5rem 2.6rem;
+      padding: 0.2rem 1.5rem 2.4rem;
       text-align: left;
       color: var(--brand-white);
     }
 
     header.hero h2 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 500;
       opacity: 0.98;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.5rem;
     }
 
     header.hero h3 {
-      font-size: 2rem;
+      font-size: 2.1rem;
+      font-weight: 650;
       margin-bottom: 0.6rem;
     }
 
@@ -175,12 +187,13 @@
       padding: 1.6rem 1.5rem 1.9rem;
       box-shadow: 0 10px 26px rgba(37, 99, 235, 0.15);
       margin-bottom: 1.5rem;
+      color: var(--text-main);        /* all section text black */
     }
 
     section h2 {
       font-size: 1.3rem;
       margin-bottom: 0.85rem;
-      color: var(--brand-blue);
+      color: var(--text-main);        /* headings black */
     }
 
     section p {
@@ -211,7 +224,7 @@
     h3 {
       font-size: 1rem;
       margin-bottom: 0.3rem;
-      color: var(--brand-orange);
+      color: var(--text-main);        /* sub-headings black */
     }
 
     ul { list-style: none; margin-top: 0.5rem; }
@@ -225,7 +238,7 @@
 
     li::before {
       content: "•";
-      color: var(--brand-orange);
+      color: var(--brand-orange);     /* orange bullet */
       position: absolute;
       left: 0;
       top: 0;
@@ -263,7 +276,7 @@
     }
 
     .contact-row a {
-      color: var(--brand-blue);
+      color: var(--text-main);        /* links black by default */
       text-decoration: none;
     }
 
@@ -406,7 +419,7 @@
           configurations and identify operating regions with smoother torque and improved
           predicted efficiency.
         </p>
-        <p><strong>Tools:</strong> OpenFOAM, geometry preparation in CAD, ParaView for post-processing.</p>
+        <p><strong>Tools:</strong> OpenFOAM, CAD for geometry prep, ParaView for post-processing.</p>
       </div>
 
       <div class="project">
@@ -420,7 +433,7 @@
           problematic bends and junctions. Recommended layout changes and sizing adjustments
           aimed at reducing system resistance and improving distribution.
         </p>
-        <p><strong>Tools:</strong> CAD, analytical calculations, basic CFD checks, spreadsheet models.</p>
+        <p><strong>Tools:</strong> CAD, analytical calculations, basic CFD checks, spreadsheets.</p>
       </div>
 
       <div class="project">
@@ -432,7 +445,7 @@
         <p>
           Evaluated how different charging patterns influence network loading and losses,
           using optimisation-style approaches to shift demand and reduce stress on the
-          system. Summarised outcomes as clear charts and simple recommendations.
+          system. Summarised outcomes as clear charts and recommendations.
         </p>
         <p><strong>Tools:</strong> Numerical scripting, optimisation routines, data visualisation.</p>
       </div>
