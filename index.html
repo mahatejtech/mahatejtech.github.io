@@ -8,21 +8,39 @@
         content="Maha Tej Technologies – CFD, mechanical engineering and sustainable energy solutions for industry and innovation." />
 
   <style>
-    /* Basic reset */
+    :root {
+      --brand-orange: #f97316;
+      --brand-blue: #2563eb;       /* flame blue */
+      --brand-white: #ffffff;
+      --brand-bg: #f5f5f5;
+      --text-main: #111827;        /* dark text only */
+      --text-muted: #475569;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      color: #0f172a;
-      background-color: #f3f4f6;
+      color: var(--text-main);
+      background-color: var(--brand-bg);
     }
 
     header {
-      background: radial-gradient(circle at top left, #f97316, #0f172a);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+      color: var(--brand-white);
       padding: 2.75rem 1.5rem 3.25rem;
       text-align: center;
+    }
+
+    .logo {
+      width: 72px;
+      height: auto;
+      margin-bottom: 0.9rem;
+      border-radius: 16px;
+      background-color: var(--brand-white);
+      padding: 6px;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
     }
 
     header h1 {
@@ -34,7 +52,7 @@
     header h2 {
       font-size: 1rem;
       font-weight: 500;
-      opacity: 0.9;
+      opacity: 0.95;
       margin-bottom: 1rem;
     }
 
@@ -48,22 +66,32 @@
       display: inline-block;
       padding: 0.6rem 1.3rem;
       border-radius: 999px;
-      border: 1px solid #ffffff;
+      border: 1px solid var(--brand-white);
       text-decoration: none;
       font-size: 0.9rem;
       margin: 0.25rem;
       cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
     }
 
     .btn-primary {
-      background-color: #ffffff;
-      color: #0f172a;
+      background-color: var(--brand-white);
+      color: var(--brand-blue);
       font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+      transform: translateY(-1px);
     }
 
     .btn-ghost {
       background-color: transparent;
-      color: #ffffff;
+      color: var(--brand-white);
+    }
+
+    .btn-ghost:hover {
+      background-color: rgba(255, 255, 255, 0.12);
     }
 
     main {
@@ -73,17 +101,17 @@
     }
 
     section {
-      background-color: #ffffff;
+      background-color: var(--brand-white);
       border-radius: 0.85rem;
       padding: 1.6rem 1.5rem 1.9rem;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.15);
       margin-bottom: 1.5rem;
     }
 
     section h2 {
       font-size: 1.3rem;
       margin-bottom: 0.85rem;
-      color: #0f172a;
+      color: var(--brand-blue);
     }
 
     section p {
@@ -95,8 +123,8 @@
       font-size: 0.75rem;
       padding: 0.15rem 0.6rem;
       border-radius: 999px;
-      background-color: #f97316;
-      color: #fff;
+      background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+      color: var(--brand-white);
       margin-right: 0.35rem;
       margin-bottom: 0.3rem;
     }
@@ -116,6 +144,7 @@
     h3 {
       font-size: 1rem;
       margin-bottom: 0.3rem;
+      color: var(--brand-orange);
     }
 
     ul { list-style: none; margin-top: 0.5rem; }
@@ -129,14 +158,14 @@
 
     li::before {
       content: "•";
-      color: #f97316;
+      color: var(--brand-orange);
       position: absolute;
       left: 0;
       top: 0;
     }
 
     .project {
-      border-left: 3px solid #f97316;
+      border-left: 3px solid var(--brand-orange);
       padding-left: 0.75rem;
     }
 
@@ -144,7 +173,7 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #6b7280;
+      color: var(--text-muted);
       margin-bottom: 0.2rem;
     }
 
@@ -154,7 +183,7 @@
 
     .tagline {
       font-size: 0.9rem;
-      color: #6b7280;
+      color: var(--text-muted);
       margin-bottom: 0.4rem;
     }
 
@@ -167,7 +196,7 @@
     }
 
     .contact-row a {
-      color: #0f172a;
+      color: var(--brand-blue);
       text-decoration: none;
     }
 
@@ -179,7 +208,7 @@
       text-align: center;
       font-size: 0.8rem;
       padding: 1rem;
-      color: #6b7280;
+      color: var(--text-muted);
     }
 
     code {
@@ -191,6 +220,8 @@
 <body>
 
 <header>
+  <!-- Your logo file must be in the repo root as logo.png -->
+  <img src="Logo.png" alt="Maha Tej Technologies logo" class="logo" />
   <h1>Maha Tej Technologies</h1>
   <h2>CFD · Mechanical Engineering · Sustainable Energy</h2>
   <p>
@@ -220,9 +251,9 @@
     </p>
     <div style="margin-top:0.8rem;">
       <span class="pill">OpenFOAM</span>
-      <span class="pill">CAD & 3D Modelling</span>
+      <span class="pill">CAD &amp; 3D Modelling</span>
       <span class="pill">Thermal Management</span>
-      <span class="pill">HVAC & Ducting</span>
+      <span class="pill">HVAC &amp; Ducting</span>
       <span class="pill">Energy Systems</span>
     </div>
   </section>
@@ -232,17 +263,17 @@
     <h2>Services</h2>
     <div class="grid grid-2">
       <div>
-        <h3>CFD & Flow Simulation</h3>
+        <h3>CFD &amp; Flow Simulation</h3>
         <p class="tagline">Understand how fluids and heat behave before you build.</p>
         <ul>
-          <li>Steady and transient CFD studies (internal & external flows).</li>
+          <li>Steady and transient CFD studies (internal &amp; external flows).</li>
           <li>Pressure drop, velocity distribution and mixing analysis.</li>
           <li>Parametric studies and basic optimisation for design choices.</li>
           <li>Post-processing and visuals for reports and presentations.</li>
         </ul>
       </div>
       <div>
-        <h3>Mechanical & Thermal Design</h3>
+        <h3>Mechanical &amp; Thermal Design</h3>
         <p class="tagline">From concept sketches to simulation-ready geometry.</p>
         <ul>
           <li>Component and assembly modelling in standard CAD tools.</li>
@@ -252,7 +283,7 @@
         </ul>
       </div>
       <div>
-        <h3>HVAC & Energy Systems Support</h3>
+        <h3>HVAC &amp; Energy Systems Support</h3>
         <p class="tagline">Make systems more efficient, robust and understandable.</p>
         <ul>
           <li>Basic analysis of HVAC duct networks and pressure losses.</li>
@@ -261,7 +292,7 @@
         </ul>
       </div>
       <div>
-        <h3>Reporting & Technical Communication</h3>
+        <h3>Reporting &amp; Technical Communication</h3>
         <p class="tagline">Turn numbers and plots into clear engineering stories.</p>
         <ul>
           <li>Concise technical reports with visuals and key metrics.</li>
@@ -278,7 +309,7 @@
     <div class="grid">
 
       <div class="project">
-        <div class="project-meta">CFD · R&D</div>
+        <div class="project-meta">CFD · R&amp;D</div>
         <h3>Hydrokinetic Turbine Flow Analysis</h3>
         <p class="tagline">
           Horizontal-axis turbine in canal-like conditions with performance comparison across operating points.
@@ -346,38 +377,17 @@
     </p>
     <div class="contact-row">
       <div><strong>Email:</strong>
-        <a href="mailto:mahatej.tech@gmail.com?subject=Maha%20Tej%20Technologies%20Enquiry">
-          mahatej.tech@gmail.com
+        <a href="mailto:hello.mahatej@gmail.com?subject=Maha%20Tej%20Technologies%20Enquiry">
+          hello.mahatej@gmail.com
         </a>
       </div>
       <div><strong>Location:</strong> Manchester, United Kingdom · available for remote collaboration.</div>
-      <!-- Add your real LinkedIn URL here -->
       <div><strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/bharath-kumar-kalavakolanu-8baa2b144/" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
           linkedin.com/in/your-profile
         </a>
       </div>
     </div>
-
-    <!-- Optional: simple contact form using Formspree or similar.
-         Uncomment this block after you create a form endpoint. -->
-    <!--
-    <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top:1rem;">
-      <label>
-        Name<br />
-        <input type="text" name="name" required />
-      </label><br /><br />
-      <label>
-        Email<br />
-        <input type="email" name="_replyto" required />
-      </label><br /><br />
-      <label>
-        Message<br />
-        <textarea name="message" rows="4" required></textarea>
-      </label><br /><br />
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-    -->
   </section>
 
 </main>
@@ -387,7 +397,6 @@
 </footer>
 
 <script>
-  // Tiny JS just to keep the year up to date
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
