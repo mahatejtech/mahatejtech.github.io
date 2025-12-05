@@ -112,13 +112,13 @@
 
     /* HERO */
 
-    header.hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0.8rem 1.5rem 2.4rem;
-      text-align: center;         /* centre hero text under header */
-      color: var(--brand-white);
-    }
+   header.hero {
+  max-width: 1040px;      /* same width as main content */
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem 2.4rem;
+  text-align: left;       /* LEFT align heading + paragraph */
+  color: var(--brand-white);
+}
 
     header.hero h2 {
       font-size: 1.7rem;          /* bigger, bold tagline or main line */
@@ -138,13 +138,12 @@
       margin: 0 auto 1.5rem;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;    /* buttons centred under text */
-    }
-
+   .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;  /* buttons start from left */
+}
     .btn {
       display: inline-block;
       padding: 0.6rem 1.3rem;
