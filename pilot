@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maha Tej Technologies | Engineering Pilot Programme</title>
+
+<style>
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #111111;
+    line-height: 1.7;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 0;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #0A3D62, #08334F);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background-color: #F97316;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0A3D62;
+}
+
+/* Section Titles */
+h2 {
+    color: #0A3D62;
+    font-size: 28px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #F97316;
+    margin-top: 12px;
+}
+
+/* Testimonials */
+.testimonial {
+    background-color: #F5F7FA;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 4px solid #F97316;
+}
+
+/* Floating CTA */
+.floating-cta {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #F97316;
+    color: #FFFFFF;
+    padding: 14px 22px;
+    font-weight: bold;
+    text-decoration: none;
+    display: none;
+    z-index: 999;
+}
+
+/* Fade In Animation */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    background-color: #111111;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer a {
+    color: #F97316;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>Engineering Grade Airflow Optimisation for High Performance Tech Environments</h1>
+    <p>
+        The Maha Tej Technologies Pilot Programme delivers structured,
+        simulation driven validation to identify cooling inefficiencies,
+        reduce thermal risk, and build measurable performance clarity within three weeks.
+    </p>
+    <a href="#apply" class="btn">Reserve Your Pilot Position</a>
+</section>
+
+<!-- PROBLEM -->
+<section class="container fade">
+    <h2>Why This Matters</h2>
+    <p>
+        Many small and growing tech businesses rely on default cooling
+        assumptions in server rooms and GPU environments.
+        This results in pressure imbalance, recirculation zones, fan overcompensation,
+        and escalating operational cost.
+    </p>
+    <p>
+        The pilot programme establishes a quantified engineering baseline
+        and provides structured optimisation scenarios supported by CFD modelling.
+    </p>
+</section>
+
+<!-- WHAT YOU RECEIVE -->
+<section class="container fade">
+    <h2>What You Receive</h2>
+    <ul>
+        <li>Three dimensional airflow and thermal distribution modelling</li>
+        <li>Hotspot identification and pressure loss mapping</li>
+        <li>Energy reduction scenario projections</li>
+        <li>Prioritised engineering recommendations</li>
+        <li>Executive summary suitable for internal review</li>
+    </ul>
+</section>
+
+<!-- PROCESS -->
+<section class="container fade">
+    <h2>Structured Three Week Sprint Model</h2>
+    <p><strong>Week 1:</strong> Baseline modelling and performance mapping</p>
+    <p><strong>Week 2:</strong> Optimisation simulation and comparative analysis</p>
+    <p><strong>Week 3:</strong> Validation report and implementation roadmap</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="container fade">
+    <h2>Early Validation Feedback</h2>
+
+    <div class="testimonial">
+        “The simulation outputs made the airflow imbalance obvious.
+        We were able to make confident decisions rather than assumptions.”
+    </div>
+
+    <div class="testimonial">
+        “Clear methodology. Transparent assumptions.
+        The results were structured and credible.”
+    </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="container fade" id="apply">
+    <h2>Limited Intake</h2>
+    <p>
+        Only a small number of pilot partners are accepted each cycle
+        to ensure technical depth and measurable outcomes.
+    </p>
+    <a href="mailto:your-email@example.com" class="btn">Apply for the Pilot</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p><strong>Maha Tej Technologies</strong></p>
+    <p>Engineering Led Simulation and Optimisation</p>
+    <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="https://www.linkedin.com">LinkedIn</a>
+    </p>
+</footer>
+
+<!-- Floating CTA -->
+<a href="#apply" class="floating-cta" id="floatingCTA">Reserve Your Pilot Spot</a>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+const options = { threshold: 0.2 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, options);
+
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+window.addEventListener("scroll", function() {
+    const cta = document.getElementById("floatingCTA");
+    if (window.scrollY > 400) {
+        cta.style.display = "block";
+    } else {
+        cta.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
