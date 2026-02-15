@@ -12,13 +12,13 @@ body {
     padding: 0;
     background-color: #FFFFFF;
     color: #111111;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* NAVIGATION */
 nav {
     background-color: #0A3D62;
-    padding: 15px 40px;
+    padding: 18px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,8 @@ nav {
 nav a {
     color: #FFFFFF;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 25px;
+    font-size: 16px;
 }
 
 nav a:hover {
@@ -51,27 +52,37 @@ nav a:hover {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
+    font-weight: bold;
 }
 
 .hero p {
-    font-size: 20px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin-top: 25px;
 }
 
+/* Particle Streamlines */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* BUTTON */
 .btn {
     display: inline-block;
-    padding: 14px 34px;
+    padding: 16px 38px;
     background-color: #F97316;
     color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 30px;
-    transition: 0.3s;
+    margin-top: 35px;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -79,48 +90,29 @@ nav a:hover {
     color: #0A3D62;
 }
 
-/* Animated Streamlines */
-.streamlines {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.05) 2px,
-        transparent 2px,
-        transparent 40px
-    );
-    animation: moveStream 20s linear infinite;
-}
-
-@keyframes moveStream {
-    from { transform: translateX(0); }
-    to { transform: translateX(-500px); }
-}
-
-/* Sections */
+/* SECTION */
 .section {
-    padding: 100px 20px;
-    max-width: 1100px;
+    padding: 110px 20px;
+    max-width: 1150px;
     margin: auto;
 }
 
 h2 {
     color: #0A3D62;
-    font-size: 30px;
+    font-size: 34px;
+    margin-bottom: 30px;
 }
 
 h2::after {
     content: "";
     display: block;
-    width: 70px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background-color: #F97316;
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
-/* Metrics */
+/* METRICS */
 .metrics {
     background-color: #F5F7FA;
     text-align: center;
@@ -128,15 +120,34 @@ h2::after {
 
 .metric-box {
     display: inline-block;
-    margin: 30px;
-    font-size: 22px;
+    margin: 40px;
+    font-size: 26px;
 }
 
-/* Fade */
+.metric-number {
+    font-size: 44px;
+    color: #0A3D62;
+    font-weight: bold;
+}
+
+/* CASE STUDY */
+.case-card {
+    background-color: #F5F7FA;
+    padding: 30px;
+    margin: 20px 0;
+    border-left: 5px solid #F97316;
+}
+
+/* ABOUT */
+.about {
+    background-color: #FFFFFF;
+}
+
+/* FADE */
 .fade {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s ease;
+    transition: all 0.9s ease;
 }
 
 .fade.visible {
@@ -144,113 +155,98 @@ h2::after {
     transform: translateY(0);
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
     background-color: #111111;
     color: #FFFFFF;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <div><strong>Maha Tej Technologies</strong></div>
     <div>
         <a href="#solutions">Solutions</a>
         <a href="#methodology">Methodology</a>
         <a href="#metrics">Performance</a>
+        <a href="#about">About</a>
         <a href="pilot.html" target="_blank">Pilot Programme</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="streamlines"></div>
+    <canvas id="particles"></canvas>
     <div class="hero-content fade">
-        <h1>Engineering Precision for High Performance Technical Environments</h1>
-        <p>
-            Simulation driven optimisation for airflow, cooling,
-            and energy performance in technology intensive facilities.
-        </p>
+        <h1>Simulation Driven Engineering for High Performance Technical Environments</h1>
+        <p>Transform airflow, thermal performance, and energy clarity through structured computational modelling.</p>
         <a href="pilot.html" target="_blank" class="btn">Explore Pilot Programme</a>
     </div>
 </section>
 
-<!-- SOLUTIONS -->
 <section class="section fade" id="solutions">
     <h2>Core Solutions</h2>
-    <p>
-        Maha Tej Technologies delivers structured computational modelling
-        and optimisation services designed to reduce inefficiencies,
-        improve thermal balance, and create measurable performance clarity.
-    </p>
-    <ul>
-        <li>Airflow and thermal simulation</li>
-        <li>Pressure loss analysis</li>
-        <li>Energy optimisation modelling</li>
-        <li>Data centre and GPU cooling analysis</li>
-        <li>Structured validation sprint programmes</li>
-    </ul>
+    <p>We deliver structured airflow modelling, cooling optimisation, and energy validation frameworks for data intensive and technology focused environments.</p>
 </section>
 
-<!-- METHODOLOGY -->
 <section class="section fade" id="methodology">
     <h2>Engineering Methodology</h2>
-    <p>
-        Our approach is based on first principles analysis, structured modelling,
-        and measurable validation cycles.
-    </p>
-    <p>
-        Every engagement follows a clear progression:
-        Baseline assessment → Optimisation modelling → Comparative validation → Implementation roadmap.
-    </p>
+    <p>Baseline modelling. Optimisation simulation. Comparative validation. Structured implementation roadmap.</p>
 </section>
 
-<!-- METRICS -->
 <section class="section metrics fade" id="metrics">
     <h2>Performance Focus</h2>
     <div class="metric-box">
-        <strong>3 Week</strong><br>
-        Validation Sprint
+        <div class="metric-number" data-target="3">0</div>
+        Week Sprint Model
     </div>
     <div class="metric-box">
-        <strong>Quantified</strong><br>
-        Energy Reduction Projections
+        <div class="metric-number" data-target="100">0</div>
+        Percent Structured Transparency
     </div>
     <div class="metric-box">
-        <strong>Structured</strong><br>
-        Engineering Outputs
-    </div>
-    <div class="metric-box">
-        <strong>Limited Intake</strong><br>
-        High Technical Depth
+        <div class="metric-number" data-target="1">0</div>
+        Engineering Authority
     </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="section fade" style="text-align:center;">
-    <h2>Structured Engineering Validation</h2>
+<section class="section fade" id="about">
+    <h2>Investor Focused Approach</h2>
     <p>
-        Engage in a controlled pilot programme designed to transform
-        thermal performance from assumption to measurable clarity.
+        Maha Tej Technologies is built on first principles engineering.
+        The objective is not consultancy output but scalable,
+        simulation driven product frameworks for energy intensive sectors.
     </p>
-    <a href="pilot.html" target="_blank" class="btn">Reserve Your Pilot Position</a>
+    <p>
+        Every pilot engagement contributes to structured dataset refinement
+        and repeatable optimisation templates.
+    </p>
 </section>
 
-<!-- FOOTER -->
+<section class="section fade">
+    <h2>Case Study Preview</h2>
+
+    <div class="case-card">
+        <strong>Server Room Airflow Validation</strong>
+        <p>Identified recirculation zones and pressure imbalance, enabling structured optimisation pathway.</p>
+    </div>
+
+    <div class="case-card">
+        <strong>GPU Workspace Cooling Analysis</strong>
+        <p>Mapped hotspot distribution and delivered comparative simulation outputs for performance improvement.</p>
+    </div>
+</section>
+
 <footer class="footer">
     <p><strong>Maha Tej Technologies</strong></p>
     <p>Engineering Led Simulation and Optimisation</p>
-    <p>
-        Privacy Policy | Terms of Service | LinkedIn
-    </p>
 </footer>
 
 <script>
+// Fade In
 const faders = document.querySelectorAll('.fade');
 const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
@@ -261,6 +257,74 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
 }, { threshold: 0.2 });
 
 faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Dynamic Counter
+const counters = document.querySelectorAll('.metric-number');
+const speed = 200;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if(count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCount();
+});
+
+// Particle Streamlines
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = 2;
+        this.speedX = 1 + Math.random();
+        this.speedY = 0;
+    }
+    update() {
+        this.x += this.speedX;
+        if (this.x > canvas.width) {
+            this.x = 0;
+            this.y = Math.random() * canvas.height;
+        }
+    }
+    draw() {
+        ctx.fillStyle = "rgba(255,255,255,0.5)";
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+    }
+}
+
+function init() {
+    for (let i = 0; i < 150; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
 </script>
 
 </body>
